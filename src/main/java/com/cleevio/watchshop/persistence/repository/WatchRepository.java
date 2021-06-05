@@ -10,5 +10,6 @@ import java.util.UUID;
 @Repository
 public interface WatchRepository extends CrudRepository<Watch, UUID> {
     List<Watch> findAll();
+
     List<Watch> findByTitle(String title);
 }

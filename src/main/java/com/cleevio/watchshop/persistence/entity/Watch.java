@@ -11,7 +11,6 @@ import java.util.UUID;
 @Entity
 @Data
 public class Watch {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

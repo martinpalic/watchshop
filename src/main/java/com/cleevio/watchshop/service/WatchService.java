@@ -45,15 +45,15 @@ public class WatchService {
         return watchOptional.map(updateWatchEntityFunction(watchDto));
     }
 
+    public void delete(UUID id) {
+        repository.deleteById(id);
+    }
+
     private Function<Watch, WatchDto> updateWatchEntityFunction(WatchDto watchDto) {
         return watch -> {
             mapper.updateFromDto(watchDto, watch);
             repository.save(watch);
             return watchDto;
         };
-    }
-
-    public void delete(UUID id) {
-        repository.deleteById(id);
     }
 }

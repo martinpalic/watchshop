@@ -1,10 +1,10 @@
 package com.cleevio.watchshop.api.dto;
 
 import lombok.Data;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.PositiveOrZero;
-
 import java.util.UUID;
 
 @Data
