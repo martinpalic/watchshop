@@ -30,16 +30,16 @@ public class WatchController {
         return ResponseEntity.ok(watches);
     }
 
+    @GetMapping(params = {"title"})
+    public ResponseEntity<List<WatchDto>> getAll(@NotBlank @RequestParam String title) {
+        List<WatchDto> watches = watchService.findByTitle(title);
+        return ResponseEntity.ok(watches);
+    }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<WatchDto> getById(@Valid @PathVariable UUID id) {
         Optional<WatchDto> watch = watchService.getById(id);
         return ResponseEntity.of(watch);
-    }
-
-    @GetMapping
-    public ResponseEntity<List<WatchDto>> findByTitle(@NotBlank @RequestParam String title) {
-        List<WatchDto> watches = watchService.findByTitle(title);
-        return ResponseEntity.ok(watches);
     }
 
     @PostMapping
